@@ -15,14 +15,13 @@ class EmailAddressParser
 
 
   def parse
-
-    @email_list.each do |email|
-      if email.include?(",")
-        binding.pry
-      end
-
+    email_array = @email_list.split("")
+    email_array.delete_if do |ch|
+      ch == ","
     end
-    # binding.pry
+    email_array.join.split(" ").uniq
+
+ 
     
   end
 
